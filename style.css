@@ -1,0 +1,63 @@
+/* Reset & global styles */
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+    box-sizing: border-box;
+}
+
+body{
+    background: #000;
+}
+
+/* Gallery container: scrollable horizontally */
+.gallery{
+    width: 900px;
+    display: flex;
+    overflow-x: scroll;
+}
+
+/* Hide scrollbar */
+.gallery::-webkit-scrollbar{
+    display: none;
+}
+
+/* Each row in the gallery */
+.gallery div{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+    padding: 20px;
+    flex: none;
+}
+
+/* Images in gallery */
+.gallery div img{
+    width: 100%;
+    filter: grayscale(1); /* start as black & white */
+    transition: transform 1s ease, filter 2s ease; /* smooth hover effects */
+}
+
+/* Hover effect for images */
+.gallery div img:hover{
+    filter: grayscale(0); /* color on hover */
+    transform: scale(1.1); /* zoom effect */
+}
+
+/* Wrap gallery and buttons, center aligned */
+.gallery-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10% auto;
+}
+
+/* Navigation buttons */
+.backBtn, .nextBtn{
+    width: 60px;
+    cursor: pointer;
+    margin: 5px;
+    transition: opacity 1s ease; /* smooth fade in/out */
+}
+
